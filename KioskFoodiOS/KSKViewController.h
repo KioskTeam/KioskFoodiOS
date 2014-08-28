@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface KSKViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapRec;
+@property (strong, nonatomic) IBOutlet UILabel *kioskFoodLabel;
 
 @end

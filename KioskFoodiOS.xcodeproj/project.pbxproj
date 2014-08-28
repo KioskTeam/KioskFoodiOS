@@ -1,486 +1,1119 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		AA4DD17B19AE3FED00805A53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4DD17A19AE3FED00805A53 /* Foundation.framework */; };
-		AA4DD17D19AE3FED00805A53 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4DD17C19AE3FED00805A53 /* CoreGraphics.framework */; };
-		AA4DD17F19AE3FED00805A53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4DD17E19AE3FED00805A53 /* UIKit.framework */; };
-		AA4DD18519AE3FED00805A53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA4DD18319AE3FED00805A53 /* InfoPlist.strings */; };
-		AA4DD18719AE3FED00805A53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DD18619AE3FED00805A53 /* main.m */; };
-		AA4DD18B19AE3FED00805A53 /* KSKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DD18A19AE3FED00805A53 /* KSKAppDelegate.m */; };
-		AA4DD18E19AE3FED00805A53 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4DD18C19AE3FED00805A53 /* Main_iPhone.storyboard */; };
-		AA4DD19119AE3FED00805A53 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4DD18F19AE3FED00805A53 /* Main_iPad.storyboard */; };
-		AA4DD19419AE3FED00805A53 /* KSKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DD19319AE3FED00805A53 /* KSKViewController.m */; };
-		AA4DD19619AE3FED00805A53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4DD19519AE3FED00805A53 /* Images.xcassets */; };
-		AA4DD19D19AE3FEE00805A53 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4DD19C19AE3FEE00805A53 /* XCTest.framework */; };
-		AA4DD19E19AE3FEE00805A53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4DD17A19AE3FED00805A53 /* Foundation.framework */; };
-		AA4DD19F19AE3FEE00805A53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4DD17E19AE3FED00805A53 /* UIKit.framework */; };
-		AA4DD1A719AE3FEE00805A53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA4DD1A519AE3FEE00805A53 /* InfoPlist.strings */; };
-		AA4DD1A919AE3FEE00805A53 /* KioskFoodiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4DD1A819AE3FEE00805A53 /* KioskFoodiOSTests.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		AA4DD1A019AE3FEE00805A53 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AA4DD16F19AE3FED00805A53 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AA4DD17619AE3FED00805A53;
-			remoteInfo = KioskFoodiOS;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		AA4DD17719AE3FED00805A53 /* KioskFoodiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KioskFoodiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA4DD17A19AE3FED00805A53 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		AA4DD17C19AE3FED00805A53 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		AA4DD17E19AE3FED00805A53 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		AA4DD18219AE3FED00805A53 /* KioskFoodiOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KioskFoodiOS-Info.plist"; sourceTree = "<group>"; };
-		AA4DD18419AE3FED00805A53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AA4DD18619AE3FED00805A53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AA4DD18819AE3FED00805A53 /* KioskFoodiOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KioskFoodiOS-Prefix.pch"; sourceTree = "<group>"; };
-		AA4DD18919AE3FED00805A53 /* KSKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSKAppDelegate.h; sourceTree = "<group>"; };
-		AA4DD18A19AE3FED00805A53 /* KSKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSKAppDelegate.m; sourceTree = "<group>"; };
-		AA4DD18D19AE3FED00805A53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		AA4DD19019AE3FED00805A53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		AA4DD19219AE3FED00805A53 /* KSKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSKViewController.h; sourceTree = "<group>"; };
-		AA4DD19319AE3FED00805A53 /* KSKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSKViewController.m; sourceTree = "<group>"; };
-		AA4DD19519AE3FED00805A53 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		AA4DD19B19AE3FEE00805A53 /* KioskFoodiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KioskFoodiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA4DD19C19AE3FEE00805A53 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		AA4DD1A419AE3FEE00805A53 /* KioskFoodiOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KioskFoodiOSTests-Info.plist"; sourceTree = "<group>"; };
-		AA4DD1A619AE3FEE00805A53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AA4DD1A819AE3FEE00805A53 /* KioskFoodiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KioskFoodiOSTests.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		AA4DD17419AE3FED00805A53 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA4DD17D19AE3FED00805A53 /* CoreGraphics.framework in Frameworks */,
-				AA4DD17F19AE3FED00805A53 /* UIKit.framework in Frameworks */,
-				AA4DD17B19AE3FED00805A53 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA4DD19819AE3FEE00805A53 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA4DD19D19AE3FEE00805A53 /* XCTest.framework in Frameworks */,
-				AA4DD19F19AE3FEE00805A53 /* UIKit.framework in Frameworks */,
-				AA4DD19E19AE3FEE00805A53 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		AA4DD16E19AE3FED00805A53 = {
-			isa = PBXGroup;
-			children = (
-				AA4DD18019AE3FED00805A53 /* KioskFoodiOS */,
-				AA4DD1A219AE3FEE00805A53 /* KioskFoodiOSTests */,
-				AA4DD17919AE3FED00805A53 /* Frameworks */,
-				AA4DD17819AE3FED00805A53 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		AA4DD17819AE3FED00805A53 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AA4DD17719AE3FED00805A53 /* KioskFoodiOS.app */,
-				AA4DD19B19AE3FEE00805A53 /* KioskFoodiOSTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		AA4DD17919AE3FED00805A53 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AA4DD17A19AE3FED00805A53 /* Foundation.framework */,
-				AA4DD17C19AE3FED00805A53 /* CoreGraphics.framework */,
-				AA4DD17E19AE3FED00805A53 /* UIKit.framework */,
-				AA4DD19C19AE3FEE00805A53 /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AA4DD18019AE3FED00805A53 /* KioskFoodiOS */ = {
-			isa = PBXGroup;
-			children = (
-				AA4DD18919AE3FED00805A53 /* KSKAppDelegate.h */,
-				AA4DD18A19AE3FED00805A53 /* KSKAppDelegate.m */,
-				AA4DD18C19AE3FED00805A53 /* Main_iPhone.storyboard */,
-				AA4DD18F19AE3FED00805A53 /* Main_iPad.storyboard */,
-				AA4DD19219AE3FED00805A53 /* KSKViewController.h */,
-				AA4DD19319AE3FED00805A53 /* KSKViewController.m */,
-				AA4DD19519AE3FED00805A53 /* Images.xcassets */,
-				AA4DD18119AE3FED00805A53 /* Supporting Files */,
-			);
-			path = KioskFoodiOS;
-			sourceTree = "<group>";
-		};
-		AA4DD18119AE3FED00805A53 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AA4DD18219AE3FED00805A53 /* KioskFoodiOS-Info.plist */,
-				AA4DD18319AE3FED00805A53 /* InfoPlist.strings */,
-				AA4DD18619AE3FED00805A53 /* main.m */,
-				AA4DD18819AE3FED00805A53 /* KioskFoodiOS-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AA4DD1A219AE3FEE00805A53 /* KioskFoodiOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				AA4DD1A819AE3FEE00805A53 /* KioskFoodiOSTests.m */,
-				AA4DD1A319AE3FEE00805A53 /* Supporting Files */,
-			);
-			path = KioskFoodiOSTests;
-			sourceTree = "<group>";
-		};
-		AA4DD1A319AE3FEE00805A53 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AA4DD1A419AE3FEE00805A53 /* KioskFoodiOSTests-Info.plist */,
-				AA4DD1A519AE3FEE00805A53 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		AA4DD17619AE3FED00805A53 /* KioskFoodiOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AA4DD1AC19AE3FEE00805A53 /* Build configuration list for PBXNativeTarget "KioskFoodiOS" */;
-			buildPhases = (
-				AA4DD17319AE3FED00805A53 /* Sources */,
-				AA4DD17419AE3FED00805A53 /* Frameworks */,
-				AA4DD17519AE3FED00805A53 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = KioskFoodiOS;
-			productName = KioskFoodiOS;
-			productReference = AA4DD17719AE3FED00805A53 /* KioskFoodiOS.app */;
-			productType = "com.apple.product-type.application";
-		};
-		AA4DD19A19AE3FEE00805A53 /* KioskFoodiOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AA4DD1AF19AE3FEE00805A53 /* Build configuration list for PBXNativeTarget "KioskFoodiOSTests" */;
-			buildPhases = (
-				AA4DD19719AE3FEE00805A53 /* Sources */,
-				AA4DD19819AE3FEE00805A53 /* Frameworks */,
-				AA4DD19919AE3FEE00805A53 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AA4DD1A119AE3FEE00805A53 /* PBXTargetDependency */,
-			);
-			name = KioskFoodiOSTests;
-			productName = KioskFoodiOSTests;
-			productReference = AA4DD19B19AE3FEE00805A53 /* KioskFoodiOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		AA4DD16F19AE3FED00805A53 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				CLASSPREFIX = KSK;
-				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Kiosk Team";
-				TargetAttributes = {
-					AA4DD19A19AE3FEE00805A53 = {
-						TestTargetID = AA4DD17619AE3FED00805A53;
-					};
-				};
-			};
-			buildConfigurationList = AA4DD17219AE3FED00805A53 /* Build configuration list for PBXProject "KioskFoodiOS" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = AA4DD16E19AE3FED00805A53;
-			productRefGroup = AA4DD17819AE3FED00805A53 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				AA4DD17619AE3FED00805A53 /* KioskFoodiOS */,
-				AA4DD19A19AE3FEE00805A53 /* KioskFoodiOSTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		AA4DD17519AE3FED00805A53 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA4DD19119AE3FED00805A53 /* Main_iPad.storyboard in Resources */,
-				AA4DD19619AE3FED00805A53 /* Images.xcassets in Resources */,
-				AA4DD18E19AE3FED00805A53 /* Main_iPhone.storyboard in Resources */,
-				AA4DD18519AE3FED00805A53 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA4DD19919AE3FEE00805A53 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA4DD1A719AE3FEE00805A53 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		AA4DD17319AE3FED00805A53 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA4DD18B19AE3FED00805A53 /* KSKAppDelegate.m in Sources */,
-				AA4DD19419AE3FED00805A53 /* KSKViewController.m in Sources */,
-				AA4DD18719AE3FED00805A53 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA4DD19719AE3FEE00805A53 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA4DD1A919AE3FEE00805A53 /* KioskFoodiOSTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AA4DD1A119AE3FEE00805A53 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AA4DD17619AE3FED00805A53 /* KioskFoodiOS */;
-			targetProxy = AA4DD1A019AE3FEE00805A53 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AA4DD18319AE3FED00805A53 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA4DD18419AE3FED00805A53 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		AA4DD18C19AE3FED00805A53 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA4DD18D19AE3FED00805A53 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		AA4DD18F19AE3FED00805A53 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA4DD19019AE3FED00805A53 /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		AA4DD1A519AE3FEE00805A53 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA4DD1A619AE3FEE00805A53 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		AA4DD1AA19AE3FEE00805A53 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		AA4DD1AB19AE3FEE00805A53 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		AA4DD1AD19AE3FEE00805A53 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KioskFoodiOS/KioskFoodiOS-Prefix.pch";
-				INFOPLIST_FILE = "KioskFoodiOS/KioskFoodiOS-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		AA4DD1AE19AE3FEE00805A53 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KioskFoodiOS/KioskFoodiOS-Prefix.pch";
-				INFOPLIST_FILE = "KioskFoodiOS/KioskFoodiOS-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		AA4DD1B019AE3FEE00805A53 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KioskFoodiOS.app/KioskFoodiOS";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KioskFoodiOS/KioskFoodiOS-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "KioskFoodiOSTests/KioskFoodiOSTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		AA4DD1B119AE3FEE00805A53 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KioskFoodiOS.app/KioskFoodiOS";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KioskFoodiOS/KioskFoodiOS-Prefix.pch";
-				INFOPLIST_FILE = "KioskFoodiOSTests/KioskFoodiOSTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		AA4DD17219AE3FED00805A53 /* Build configuration list for PBXProject "KioskFoodiOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AA4DD1AA19AE3FEE00805A53 /* Debug */,
-				AA4DD1AB19AE3FEE00805A53 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AA4DD1AC19AE3FEE00805A53 /* Build configuration list for PBXNativeTarget "KioskFoodiOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AA4DD1AD19AE3FEE00805A53 /* Debug */,
-				AA4DD1AE19AE3FEE00805A53 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		AA4DD1AF19AE3FEE00805A53 /* Build configuration list for PBXNativeTarget "KioskFoodiOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AA4DD1B019AE3FEE00805A53 /* Debug */,
-				AA4DD1B119AE3FEE00805A53 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = AA4DD16F19AE3FED00805A53 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>6AB0DD70ACA34D2581F97FFA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>91C35A756DDA4D14B74E1190</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>9ED4686BFE7B471F9CA7E0F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>91C35A756DDA4D14B74E1190</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD16E19AE3FED00805A53</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AA4DD18019AE3FED00805A53</string>
+				<string>AA4DD1A219AE3FEE00805A53</string>
+				<string>AA4DD17919AE3FED00805A53</string>
+				<string>AA4DD17819AE3FED00805A53</string>
+				<string>E2CA3B62EE0849AFB861C4B1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD16F19AE3FED00805A53</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>CLASSPREFIX</key>
+				<string>KSK</string>
+				<key>LastUpgradeCheck</key>
+				<string>0510</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Kiosk Team</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>AA4DD19A19AE3FEE00805A53</key>
+					<dict>
+						<key>TestTargetID</key>
+						<string>AA4DD17619AE3FED00805A53</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>AA4DD17219AE3FED00805A53</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>AA4DD16E19AE3FED00805A53</string>
+			<key>productRefGroup</key>
+			<string>AA4DD17819AE3FED00805A53</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>AA4DD17619AE3FED00805A53</string>
+				<string>AA4DD19A19AE3FEE00805A53</string>
+			</array>
+		</dict>
+		<key>AA4DD17219AE3FED00805A53</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>AA4DD1AA19AE3FEE00805A53</string>
+				<string>AA4DD1AB19AE3FEE00805A53</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>AA4DD17319AE3FED00805A53</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AA4DD18B19AE3FED00805A53</string>
+				<string>AA4DD19419AE3FED00805A53</string>
+				<string>AA4DD18719AE3FED00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AA4DD17419AE3FED00805A53</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AA4DD17D19AE3FED00805A53</string>
+				<string>AA4DD17F19AE3FED00805A53</string>
+				<string>AA4DD17B19AE3FED00805A53</string>
+				<string>9ED4686BFE7B471F9CA7E0F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AA4DD17519AE3FED00805A53</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AA4DD19119AE3FED00805A53</string>
+				<string>AA4DD19619AE3FED00805A53</string>
+				<string>AA4DD18E19AE3FED00805A53</string>
+				<string>AA4DD18519AE3FED00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AA4DD17619AE3FED00805A53</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>AA4DD1AC19AE3FEE00805A53</string>
+			<key>buildPhases</key>
+			<array>
+				<string>E531E6872A4D459EAD774DFF</string>
+				<string>AA4DD17319AE3FED00805A53</string>
+				<string>AA4DD17419AE3FED00805A53</string>
+				<string>AA4DD17519AE3FED00805A53</string>
+				<string>6AB0DD70ACA34D2581F97FFA</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>KioskFoodiOS</string>
+			<key>productName</key>
+			<string>KioskFoodiOS</string>
+			<key>productReference</key>
+			<string>AA4DD17719AE3FED00805A53</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>AA4DD17719AE3FED00805A53</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>KioskFoodiOS.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>AA4DD17819AE3FED00805A53</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AA4DD17719AE3FED00805A53</string>
+				<string>AA4DD19B19AE3FEE00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD17919AE3FED00805A53</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AA4DD17A19AE3FED00805A53</string>
+				<string>AA4DD17C19AE3FED00805A53</string>
+				<string>AA4DD17E19AE3FED00805A53</string>
+				<string>AA4DD19C19AE3FEE00805A53</string>
+				<string>91C35A756DDA4D14B74E1190</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD17A19AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>AA4DD17B19AE3FED00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD17A19AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD17C19AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>AA4DD17D19AE3FED00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD17C19AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD17E19AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>AA4DD17F19AE3FED00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD17E19AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD18019AE3FED00805A53</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AA4DD18919AE3FED00805A53</string>
+				<string>AA4DD18A19AE3FED00805A53</string>
+				<string>AA4DD18C19AE3FED00805A53</string>
+				<string>AA4DD18F19AE3FED00805A53</string>
+				<string>AA4DD19219AE3FED00805A53</string>
+				<string>AA4DD19319AE3FED00805A53</string>
+				<string>AA4DD19519AE3FED00805A53</string>
+				<string>AA4DD18119AE3FED00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>KioskFoodiOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD18119AE3FED00805A53</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AA4DD18219AE3FED00805A53</string>
+				<string>AA4DD18319AE3FED00805A53</string>
+				<string>AA4DD18619AE3FED00805A53</string>
+				<string>AA4DD18819AE3FED00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD18219AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>KioskFoodiOS-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD18319AE3FED00805A53</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AA4DD18419AE3FED00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD18419AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD18519AE3FED00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD18319AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD18619AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD18719AE3FED00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD18619AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD18819AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KioskFoodiOS-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD18919AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KSKAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD18A19AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KSKAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD18B19AE3FED00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD18A19AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD18C19AE3FED00805A53</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AA4DD18D19AE3FED00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main_iPhone.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD18D19AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main_iPhone.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD18E19AE3FED00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD18C19AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD18F19AE3FED00805A53</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AA4DD19019AE3FED00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main_iPad.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD19019AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main_iPad.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD19119AE3FED00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD18F19AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD19219AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>KSKViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD19319AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KSKViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD19419AE3FED00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD19319AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD19519AE3FED00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD19619AE3FED00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD19519AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD19719AE3FEE00805A53</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AA4DD1A919AE3FEE00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AA4DD19819AE3FEE00805A53</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AA4DD19D19AE3FEE00805A53</string>
+				<string>AA4DD19F19AE3FEE00805A53</string>
+				<string>AA4DD19E19AE3FEE00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AA4DD19919AE3FEE00805A53</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AA4DD1A719AE3FEE00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AA4DD19A19AE3FEE00805A53</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>AA4DD1AF19AE3FEE00805A53</string>
+			<key>buildPhases</key>
+			<array>
+				<string>AA4DD19719AE3FEE00805A53</string>
+				<string>AA4DD19819AE3FEE00805A53</string>
+				<string>AA4DD19919AE3FEE00805A53</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>AA4DD1A119AE3FEE00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>KioskFoodiOSTests</string>
+			<key>productName</key>
+			<string>KioskFoodiOSTests</string>
+			<key>productReference</key>
+			<string>AA4DD19B19AE3FEE00805A53</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>AA4DD19B19AE3FEE00805A53</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>KioskFoodiOSTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>AA4DD19C19AE3FEE00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>XCTest.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/XCTest.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>AA4DD19D19AE3FEE00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD19C19AE3FEE00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD19E19AE3FEE00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD17A19AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD19F19AE3FEE00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD17E19AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD1A019AE3FEE00805A53</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>AA4DD16F19AE3FED00805A53</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>AA4DD17619AE3FED00805A53</string>
+			<key>remoteInfo</key>
+			<string>KioskFoodiOS</string>
+		</dict>
+		<key>AA4DD1A119AE3FEE00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>AA4DD17619AE3FED00805A53</string>
+			<key>targetProxy</key>
+			<string>AA4DD1A019AE3FEE00805A53</string>
+		</dict>
+		<key>AA4DD1A219AE3FEE00805A53</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AA4DD1A819AE3FEE00805A53</string>
+				<string>AA4DD1A319AE3FEE00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>KioskFoodiOSTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD1A319AE3FEE00805A53</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AA4DD1A419AE3FEE00805A53</string>
+				<string>AA4DD1A519AE3FEE00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD1A419AE3FEE00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>KioskFoodiOSTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD1A519AE3FEE00805A53</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AA4DD1A619AE3FEE00805A53</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD1A619AE3FEE00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD1A719AE3FEE00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD1A519AE3FEE00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD1A819AE3FEE00805A53</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>KioskFoodiOSTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AA4DD1A919AE3FEE00805A53</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA4DD1A819AE3FEE00805A53</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AA4DD1AA19AE3FEE00805A53</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>AA4DD1AB19AE3FEE00805A53</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>AA4DD1AC19AE3FEE00805A53</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>AA4DD1AD19AE3FEE00805A53</string>
+				<string>AA4DD1AE19AE3FEE00805A53</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>AA4DD1AD19AE3FEE00805A53</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E2CA3B62EE0849AFB861C4B1</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>KioskFoodiOS/KioskFoodiOS-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>KioskFoodiOS/KioskFoodiOS-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>AA4DD1AE19AE3FEE00805A53</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E2CA3B62EE0849AFB861C4B1</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>KioskFoodiOS/KioskFoodiOS-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>KioskFoodiOS/KioskFoodiOS-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>AA4DD1AF19AE3FEE00805A53</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>AA4DD1B019AE3FEE00805A53</string>
+				<string>AA4DD1B119AE3FEE00805A53</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>AA4DD1B019AE3FEE00805A53</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/KioskFoodiOS.app/KioskFoodiOS</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>KioskFoodiOS/KioskFoodiOS-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>KioskFoodiOSTests/KioskFoodiOSTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>AA4DD1B119AE3FEE00805A53</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/KioskFoodiOS.app/KioskFoodiOS</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>KioskFoodiOS/KioskFoodiOS-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>KioskFoodiOSTests/KioskFoodiOSTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>E2CA3B62EE0849AFB861C4B1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E531E6872A4D459EAD774DFF</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>AA4DD16F19AE3FED00805A53</string>
+</dict>
+</plist>

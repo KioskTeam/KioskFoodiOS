@@ -1,10 +1,13 @@
 PODS:
+  - MPSkewed (0.1.0)
   - pop (1.0.6)
 
 DEPENDENCIES:
+  - MPSkewed
   - pop (~> 1.0)
 
 SPEC CHECKSUMS:
+  MPSkewed: b018d4a7fb6161adaa960599cf1ae27c89c4df77
   pop: e518794da38942c05255eb64b36d894e70cb4f00
 
 COCOAPODS: 0.33.1

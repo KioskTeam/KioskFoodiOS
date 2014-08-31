@@ -43,6 +43,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="158" y="108"/>
         </scene>
         <!--Food Menu Home-->
         <scene sceneID="3op-Go-Kji">
@@ -57,10 +58,32 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="qcP-xZ-5bL" kind="modal" identifier="browseCategorySegue" id="gNQ-NA-Aeb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J31-oa-xMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="288" y="745"/>
+            <point key="canvasLocation" x="158" y="793"/>
+        </scene>
+        <!--Category Table View Controller-->
+        <scene sceneID="5CF-fF-OLx">
+            <objects>
+                <tableViewController storyboardIdentifier="foodTableView" id="qcP-xZ-5bL" customClass="KSKCategoryTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BdK-9d-HEk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="qcP-xZ-5bL" id="Qje-F8-hdN"/>
+                            <outlet property="delegate" destination="qcP-xZ-5bL" id="1YS-Uh-Loe"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VtK-Wz-U1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754" y="793"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

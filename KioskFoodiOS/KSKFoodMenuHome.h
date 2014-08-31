@@ -11,6 +11,7 @@
 @interface KSKFoodMenuHome : UIViewController<UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate> {
     UICollectionView *_collectionView;
     NSInteger choosed;
+
 }
 
 @end

@@ -11,13 +11,21 @@
 #import "MPSkewedParallaxLayout.h"
 
 
-static NSString *kCell=@"cell";
+#import "KSKFoodData.h"
+#import "KSKCategoryData.h"
+#import "KSKCategoryTableViewController.h"
+#import "KSKKioskCommunicator.h"
 
+static NSString *kCell=@"cell";
+static int  selectedRow =-1;
 
 #define PARALLAX_ENABLED 1
 
 
 @interface KSKFoodMenuHome ()
+
+@property (assign, nonatomic) NSInteger numberOfCells;
+@property(strong, nonatomic) KSKRestaurantData* data ;
 
 @end
 
@@ -50,87 +58,51 @@ static NSString *kCell=@"cell";
     [_collectionView registerClass:[MPSkewedCell class] forCellWithReuseIdentifier:kCell];
     [self.view addSubview:_collectionView];
     
+    
+    _numberOfCells = 0;
+    KSKKioskCommunicator* kCommunicator = [[KSKKioskCommunicator alloc] init];
+
+    _data = [kCommunicator fetchData];
+    
+    if (_data) {
+        _numberOfCells = [_data.categoreis count];
+    }
+    
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return  7;
+    return  _numberOfCells;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     MPSkewedCell* cell = (MPSkewedCell *) [collectionView dequeueReusableCellWithReuseIdentifier:kCell forIndexPath:indexPath];
-    
-    //cell.image=[UIImage imageNamed:[NSString stringWithFormat:@"%li",(long) (choosed>=0 ? choosed : indexPath.item%5+1)]];
-    
-    cell.image = [UIImage imageNamed:@"foodBasket"];
-    
-    NSString *text;
-    
+
     NSInteger index = indexPath.row;
     
-    switch (index) {
-        case 0:
-            text=@"Burgers\n aaa";
-            break;
-        case 1:
-            text=@"Sandwiches\n bbb";
-            break;
-        case 2:
-            text=@"Appetizers\n ccc";
-            break;
-        case 3:
-            text=@"Desserts\n ddd";
-            break;
-        case 4:
-            text=@"Coffee & Tea\n eee";
-            break;
-        case 5:
-            text=@"Drinks\n fff";
-            break;
-        case 6:
-            text=@"Gallery\n ggg";
-            break;
-            
-        default:
-            break;
-            
-    }
-    
-    cell.text=text;
-    
+    KSKCategoryData* cellCategoryData = [_data.categoreis objectAtIndex:index];
+    cell.text = cellCategoryData.Name;
+    cell.image = [UIImage imageNamed:@"foodBasket"];
+
+    selectedRow = (int)index;
     return cell;
 }
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSLog(@"item %li",(long)indexPath.item);
-    
-//    NSInteger bk=choosed;
-//    
-//    if(choosed==-1)
-//        choosed=indexPath.item;
-//    else choosed=-1;
-//    
-//    NSMutableArray *arr=[[NSMutableArray alloc] init];
-//    
-//    for (NSInteger i=0; i<30; i++) {
-//        if (i!=choosed && i!=bk) {
-//            [arr addObject:[NSIndexPath indexPathForItem:i inSection:0]];
-//        }
-//    }
-//    
-//    [collectionView performBatchUpdates:^{
-//        if (choosed==-1) {
-//            [collectionView insertItemsAtIndexPaths:arr];
-//        }else [collectionView deleteItemsAtIndexPaths:arr];
-//    } completion:^(BOOL finished) {
-//        
-//    }];
-//    
+    [self performSegueWithIdentifier: @"browseCategorySegue" sender: self];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender   {
+    if([segue.identifier isEqualToString:@"browseCategorySegue"]) {
+        KSKCategoryTableViewController *controller = (KSKCategoryTableViewController *) segue.destinationViewController;
+        KSKCategoryData* catData = [_data.categoreis objectAtIndex:selectedRow];
+        controller.categoryData = catData;
+    }
     
 }
+
 
 @end

@@ -70,7 +70,6 @@
 		AAACC7AD19B355E400308840 /* KSKCategoryData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSKCategoryData.m; sourceTree = "<group>"; };
 		AAACC7AF19B357CC00308840 /* KSKRestaurantData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSKRestaurantData.h; sourceTree = "<group>"; };
 		AAACC7B019B357CC00308840 /* KSKRestaurantData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSKRestaurantData.m; sourceTree = "<group>"; };
-		AAACC7B219B35F4B00308840 /* KSKKioskCommunicatorDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSKKioskCommunicatorDelegate.h; sourceTree = "<group>"; };
 		AAACC7B619B3605900308840 /* KSKKioskCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSKKioskCommunicator.h; sourceTree = "<group>"; };
 		AAACC7B719B3605900308840 /* KSKKioskCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSKKioskCommunicator.m; sourceTree = "<group>"; };
 		AAACC7B919B3675000308840 /* sampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleData.json; sourceTree = "<group>"; };
@@ -155,7 +154,6 @@
 				AAACC7AD19B355E400308840 /* KSKCategoryData.m */,
 				AAACC7AF19B357CC00308840 /* KSKRestaurantData.h */,
 				AAACC7B019B357CC00308840 /* KSKRestaurantData.m */,
-				AAACC7B219B35F4B00308840 /* KSKKioskCommunicatorDelegate.h */,
 				AAACC7B619B3605900308840 /* KSKKioskCommunicator.h */,
 				AAACC7B719B3605900308840 /* KSKKioskCommunicator.m */,
 				AAACC7BB19B3980300308840 /* KSKCategoryTableViewController.h */,

@@ -13,7 +13,5 @@
 
 @interface KSKKioskCommunicator : NSObject
 
-@property(weak, nonatomic) id<KSKKioskCommunicatorDelegate> delegate;
-
--(KSKRestaurantData *) fetchData;
+-(void) fetchData:(void (^)(KSKRestaurantData* data)) callBack;
 @end

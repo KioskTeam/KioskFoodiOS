@@ -50,7 +50,6 @@ static int  selectedRow =-1;
     
 #endif
     
-    
     _collectionView=[[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     _collectionView.delegate=self;
     _collectionView.dataSource=self;
@@ -62,11 +61,17 @@ static int  selectedRow =-1;
     _numberOfCells = 0;
     KSKKioskCommunicator* kCommunicator = [[KSKKioskCommunicator alloc] init];
 
-    _data = [kCommunicator fetchData];
-    
-    if (_data) {
-        _numberOfCells = [_data.categoreis count];
-    }
+    [kCommunicator fetchData:^(KSKRestaurantData *restaurantData) {
+        // Data received!
+        
+        _data = restaurantData;
+        
+        if (_data) {
+            _numberOfCells = [_data.categoreis count];
+        }
+        
+        [_collectionView reloadData];
+    }];
     
 }
 

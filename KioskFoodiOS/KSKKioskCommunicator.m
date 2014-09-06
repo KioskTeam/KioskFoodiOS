@@ -70,7 +70,7 @@ static  NSString *const TAG_PICTURES = @"Pictures";
                     KSKFoodData* newFood = [[KSKFoodData alloc] init];
                     newFood.name = jsonFood[TAG_NAME];
                     newFood.thumbnailImageUrl = jsonFood[TAG_THUMBNAIL];
-                    newFood.price = (NSInteger) jsonFood[TAG_PRICE];
+                    //newFood.price = (NSInteger) jsonFood[TAG_PRICE];
                     
                     NSMutableArray* photos = [[NSMutableArray alloc] init];
                     

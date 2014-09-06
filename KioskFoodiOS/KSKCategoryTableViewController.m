@@ -8,6 +8,8 @@
 
 #import "KSKCategoryTableViewController.h"
 #import "KSKFoodData.h"
+#import "KSKFoodViewController.h"
+
 
 @interface KSKCategoryTableViewController ()
 @end
@@ -32,6 +34,16 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    
+}
+- (IBAction)closeButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)goBackButton:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:TRUE];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,15 +68,33 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+    static NSString *CatCellTableIdentifier = @"categoryCellProtoID";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CatCellTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CatCellTableIdentifier];
+        cell.backgroundColor = [UIColor orangeColor];
     }
     
     KSKFoodData* fdata = [_categoryData.Foods objectAtIndex:indexPath.row];
     cell.textLabel.text = fdata.name;
     return cell;
-}@end
+}
+
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender   {
+  
+    if([segue.identifier isEqualToString:@"browseFoodSegue"]) {
+        KSKFoodViewController *controller = (KSKFoodViewController *) segue.destinationViewController;
+    
+        NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+        int selectedRow = (int)index.row;
+        
+        
+        KSKFoodData* selectedFoodData = [_categoryData.Foods objectAtIndex:selectedRow];
+        controller.navigationItem.title = selectedFoodData.name;
+            controller.foodData = selectedFoodData;
+    }
+}
+@end

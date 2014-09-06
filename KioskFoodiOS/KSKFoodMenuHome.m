@@ -35,8 +35,6 @@ static int  selectedRow =-1;
 {
     [super viewDidLoad];
     
-    self.navigationController.navigationBarHidden=YES;
-    
 #ifndef PARALLAX_ENABLED
     // you can use that if you don't need parallax
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
@@ -91,12 +89,14 @@ static int  selectedRow =-1;
     cell.text = cellCategoryData.Name;
     cell.image = [UIImage imageNamed:@"foodBasket"];
 
-    selectedRow = (int)index;
     return cell;
 }
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger index = indexPath.row;
+    selectedRow = (int)index;
+    
     [self performSegueWithIdentifier: @"browseCategorySegue" sender: self];
 }
 
@@ -104,6 +104,7 @@ static int  selectedRow =-1;
     if([segue.identifier isEqualToString:@"browseCategorySegue"]) {
         KSKCategoryTableViewController *controller = (KSKCategoryTableViewController *) segue.destinationViewController;
         KSKCategoryData* catData = [_data.categoreis objectAtIndex:selectedRow];
+        controller.navigationItem.title = catData.Name;
         controller.categoryData = catData;
     }
     

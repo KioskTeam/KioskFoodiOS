@@ -11,7 +11,9 @@
 
 @protocol KSKKioskCommunicatorDelegate;
 
+
 @interface KSKKioskCommunicator : NSObject
 
 -(void) fetchData:(void (^)(KSKRestaurantData* data)) callBack;
+-(void) getImage:(NSString*) imageUrl callBackFunc:(void (^) (UIImage* reuqestedImage)) callBack;
 @end

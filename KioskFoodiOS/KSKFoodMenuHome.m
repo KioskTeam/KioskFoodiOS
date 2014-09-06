@@ -18,6 +18,7 @@
 
 static NSString *kCell=@"cell";
 static int  selectedRow =-1;
+KSKKioskCommunicator* kCommunicator;
 
 #define PARALLAX_ENABLED 1
 
@@ -57,7 +58,7 @@ static int  selectedRow =-1;
     
     
     _numberOfCells = 0;
-    KSKKioskCommunicator* kCommunicator = [[KSKKioskCommunicator alloc] init];
+    kCommunicator = [[KSKKioskCommunicator alloc] init];
 
     [kCommunicator fetchData:^(KSKRestaurantData *restaurantData) {
         // Data received!
@@ -87,7 +88,13 @@ static int  selectedRow =-1;
     
     KSKCategoryData* cellCategoryData = [_data.categoreis objectAtIndex:index];
     cell.text = cellCategoryData.Name;
-    cell.image = [UIImage imageNamed:@"foodBasket"];
+   
+    // Placeholder Image
+    //cell.image = [UIImage imageNamed:@"foodBasket"];
+    // Try to get Category image via KSKKioskCommunicator Class 
+    [kCommunicator getImage:cellCategoryData.ImageUrl callBackFunc:^(UIImage *reuqestedImage) {
+        cell.image = reuqestedImage;
+    }];
 
     return cell;
 }

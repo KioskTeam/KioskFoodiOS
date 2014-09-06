@@ -21,7 +21,8 @@ static  NSString *const TAG_FOODS = @"Foods";
 static  NSString *const TAG_PRICE = @"Price";
 static  NSString *const TAG_THUMBNAIL = @"Thumbnail";
 static  NSString *const TAG_PICTURES = @"Pictures";
-
+static  NSString *const REMOTE_IMAGE_POOL_DIRECTORY =@"http://secure-scrubland-8071.herokuapp.com";
+static  NSString *const REMOTE_API_URL = @"http://secure-scrubland-8071.herokuapp.com/api/latest";
 @implementation KSKKioskCommunicator
 
 
@@ -37,7 +38,7 @@ static  NSString *const TAG_PICTURES = @"Pictures";
     
     KSKRestaurantData* restaurant = [[KSKRestaurantData alloc] init];
     
-    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://secure-scrubland-8071.herokuapp.com/api/latest"]];
+    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:REMOTE_API_URL]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         
         NSError * parseError;
@@ -91,6 +92,48 @@ static  NSString *const TAG_PICTURES = @"Pictures";
         
         callBack(restaurant);
     }];
+    
+}
+
+
+-(void) getImage:(NSString*) imageUrl callBackFunc:(void (^) (UIImage* reuqestedImage)) callBack {
+    NSString * urlToGet = [NSString stringWithFormat:@"%@%@", REMOTE_IMAGE_POOL_DIRECTORY, imageUrl];
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,  0ul);
+    dispatch_async(queue, ^{
+        
+        // Check if image is already exists!
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *filePath = [NSString stringWithFormat:@"%@%@", [paths objectAtIndex:0], imageUrl];
+        NSLog(@"%@", filePath);
+        BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:filePath];
+        
+        UIImage *image;
+        if(fileExists) {
+            NSData* imageData = [NSData dataWithContentsOfFile:filePath];
+            
+            image = [UIImage imageWithData:imageData];
+            
+            NSLog(@"File Already Exists!");
+        } else {
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlToGet]];
+            image = [UIImage imageWithData:data];
+            // Save image
+            // for now i assume all images are in JPG format
+            
+            [[NSFileManager defaultManager] createDirectoryAtPath:[NSString stringWithFormat:@"%@%@", [paths objectAtIndex:0], @"assets"]
+                                      withIntermediateDirectories:YES
+                                                       attributes:nil
+                                                            error:nil];
+            
+            [UIImageJPEGRepresentation(image, 1.0) writeToFile:filePath atomically:YES];
+        }
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            callBack(image);
+        });
+    });
     
 }
 

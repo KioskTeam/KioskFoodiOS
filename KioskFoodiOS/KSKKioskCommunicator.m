@@ -23,8 +23,45 @@ static  NSString *const TAG_THUMBNAIL = @"Thumbnail";
 static  NSString *const TAG_PICTURES = @"Pictures";
 static  NSString *const REMOTE_IMAGE_POOL_DIRECTORY =@"http://secure-scrubland-8071.herokuapp.com";
 static  NSString *const REMOTE_API_URL = @"http://secure-scrubland-8071.herokuapp.com/api/latest";
+static  NSString *const ASSET_FOLDER = @"assets";
+NSString* DocumentDirectory;
+NSString* AssetsDirectory;
+
 @implementation KSKKioskCommunicator
 
+-(id) init{
+    self = [super init];
+    
+    if(self) {
+        _imagesDic = [[NSMutableDictionary alloc] init];
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        DocumentDirectory = [paths objectAtIndex:0];
+        AssetsDirectory = [NSString stringWithFormat:@"%@/%@/", [paths objectAtIndex:0], ASSET_FOLDER];
+        
+        //Directory Check
+        [[NSFileManager defaultManager] createDirectoryAtPath:AssetsDirectory withIntermediateDirectories:YES  attributes:nil error:nil];
+        
+        // getting all locally stored images
+        NSError *error;
+        NSArray *storedImages = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:AssetsDirectory error:&error];
+        if(!error) {
+            for (int i = 0, n = (int)[storedImages count]; i < n ; i++) {
+                if(![[storedImages objectAtIndex:i] isEqual:@".DS_Store"])
+                {
+                    NSString * fullImagePath =[NSString stringWithFormat:@"%@/%@", AssetsDirectory, [storedImages objectAtIndex:i]];
+                    
+                    UIImage* rIamge = [UIImage imageWithContentsOfFile:fullImagePath];
+                    
+                    [_imagesDic setObject:rIamge forKey:[storedImages objectAtIndex:i]];
+                }
+            }
+        }
+        
+    }
+    
+    return self;
+}
 
 -(void) fetchData:(void (^)(KSKRestaurantData *))callBack {
     
@@ -97,43 +134,36 @@ static  NSString *const REMOTE_API_URL = @"http://secure-scrubland-8071.herokuap
 
 
 -(void) getImage:(NSString*) imageUrl callBackFunc:(void (^) (UIImage* reuqestedImage)) callBack {
-    NSString * urlToGet = [NSString stringWithFormat:@"%@%@", REMOTE_IMAGE_POOL_DIRECTORY, imageUrl];
     
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,  0ul);
-    dispatch_async(queue, ^{
+    NSArray *parts = [imageUrl componentsSeparatedByString:@"/"];
+    UIImage* requestedImage = _imagesDic[[parts objectAtIndex:(int)[parts count]-1]];
+    
+    if(requestedImage) {
+        //Already in image pool
+        callBack(requestedImage);
+    } else {
+        // Image not existed!
+    
+        NSString * urlToGet = [NSString stringWithFormat:@"%@%@", REMOTE_IMAGE_POOL_DIRECTORY, imageUrl];
         
-        // Check if image is already exists!
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *filePath = [NSString stringWithFormat:@"%@%@", [paths objectAtIndex:0], imageUrl];
-        NSLog(@"%@", filePath);
-        BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:filePath];
-        
-        UIImage *image;
-        if(fileExists) {
-            NSData* imageData = [NSData dataWithContentsOfFile:filePath];
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,  0ul);
+        dispatch_async(queue, ^{
             
-            image = [UIImage imageWithData:imageData];
-            
-            NSLog(@"File Already Exists!");
-        } else {
             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlToGet]];
-            image = [UIImage imageWithData:data];
+            UIImage *image = [UIImage imageWithData:data];
+            
             // Save image
             // for now i assume all images are in JPG format
             
-            [[NSFileManager defaultManager] createDirectoryAtPath:[NSString stringWithFormat:@"%@%@", [paths objectAtIndex:0], @"assets"]
-                                      withIntermediateDirectories:YES
-                                                       attributes:nil
-                                                            error:nil];
+            NSString *pathForSave = [NSString stringWithFormat:@"%@%@", DocumentDirectory, imageUrl];
+            [UIImageJPEGRepresentation(image, 1.0) writeToFile:pathForSave atomically:YES];
+            [_imagesDic setObject:image forKey:[parts objectAtIndex:(int)[parts count]-1]];
             
-            [UIImageJPEGRepresentation(image, 1.0) writeToFile:filePath atomically:YES];
-        }
-        
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            callBack(image);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                callBack(image);
+            });
         });
-    });
+    }
     
 }
 

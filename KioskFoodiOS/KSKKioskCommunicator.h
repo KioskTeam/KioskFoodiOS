@@ -13,5 +13,11 @@
 
 @interface KSKKioskCommunicator : NSObject
 
+@property (strong, nonatomic) NSMutableDictionary* imagesDic;
+
+-(id) init;
+
 -(void) fetchData:(void (^)(KSKRestaurantData* data)) callBack;
+-(void) getImage:(NSString*) imageUrl callBackFunc:(void (^) (UIImage* reuqestedImage)) callBack;
+
 @end

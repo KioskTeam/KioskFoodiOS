@@ -17,7 +17,7 @@
 
 -(id) init;
 
--(void) fetchData:(void (^)(KSKRestaurantData* data)) callBack;
+-(void) fetchData:(void (^)(KSKRestaurantData* data)) callBack forceUpdate:(BOOL ) force;
 -(void) getImage:(NSString*) imageUrl callBackFunc:(void (^) (UIImage* reuqestedImage)) callBack;
-
+-(void) parseJsonData:(NSData *) jsonFile callBackFunc:(void (^)(KSKRestaurantData* data)) callBack;
 @end

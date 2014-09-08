@@ -60,7 +60,7 @@ KSKKioskCommunicator* kCommunicator;
     _numberOfCells = 0;
     kCommunicator = [[KSKKioskCommunicator alloc] init];
 
-    [kCommunicator fetchData:^(KSKRestaurantData *restaurantData) {
+    [kCommunicator fetchData:^(KSKRestaurantData *restaurantData)  {
         // Data received!
         
         _data = restaurantData;
@@ -70,7 +70,7 @@ KSKKioskCommunicator* kCommunicator;
         }
         
         [_collectionView reloadData];
-    }];
+    } forceUpdate:NO];
     
 }
 
@@ -114,6 +114,25 @@ KSKKioskCommunicator* kCommunicator;
         controller.navigationItem.title = catData.Name;
         controller.categoryData = catData;
     }
+    
+}
+
+- (IBAction)reloadData:(id)sender {
+    _numberOfCells = 0;
+    
+    if(kCommunicator == NULL) {
+        kCommunicator = [[KSKKioskCommunicator alloc] init];
+    }
+    
+    [kCommunicator fetchData:^(KSKRestaurantData *restaurantData)  {
+        _data = restaurantData;
+        
+        if (_data) {
+            _numberOfCells = [_data.categoreis count];
+        }
+        
+        [_collectionView reloadData];
+    } forceUpdate:YES];
     
 }
 

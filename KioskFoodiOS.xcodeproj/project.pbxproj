@@ -27,7 +27,6 @@
 		AAACC7AE19B355E400308840 /* KSKCategoryData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAACC7AD19B355E400308840 /* KSKCategoryData.m */; };
 		AAACC7B119B357CC00308840 /* KSKRestaurantData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAACC7B019B357CC00308840 /* KSKRestaurantData.m */; };
 		AAACC7B819B3605900308840 /* KSKKioskCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = AAACC7B719B3605900308840 /* KSKKioskCommunicator.m */; };
-		AAACC7BA19B3675000308840 /* sampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = AAACC7B919B3675000308840 /* sampleData.json */; };
 		AAACC7BD19B3980300308840 /* KSKCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAACC7BC19B3980300308840 /* KSKCategoryTableViewController.m */; };
 		AAAEFEAA19BACFBF00982D02 /* KSKFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAEFEA919BACFBF00982D02 /* KSKFoodViewController.m */; };
 		AABB5C3E19B0F18400539BF2 /* KSKFoodMenuHome.m in Sources */ = {isa = PBXBuildFile; fileRef = AABB5C3D19B0F18400539BF2 /* KSKFoodMenuHome.m */; };
@@ -73,7 +72,6 @@
 		AAACC7B019B357CC00308840 /* KSKRestaurantData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSKRestaurantData.m; sourceTree = "<group>"; };
 		AAACC7B619B3605900308840 /* KSKKioskCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSKKioskCommunicator.h; sourceTree = "<group>"; };
 		AAACC7B719B3605900308840 /* KSKKioskCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSKKioskCommunicator.m; sourceTree = "<group>"; };
-		AAACC7B919B3675000308840 /* sampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleData.json; sourceTree = "<group>"; };
 		AAACC7BB19B3980300308840 /* KSKCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSKCategoryTableViewController.h; sourceTree = "<group>"; };
 		AAACC7BC19B3980300308840 /* KSKCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSKCategoryTableViewController.m; sourceTree = "<group>"; };
 		AAAEFEA819BACFBF00982D02 /* KSKFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSKFoodViewController.h; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				AAAEFEA819BACFBF00982D02 /* KSKFoodViewController.h */,
 				AAAEFEA919BACFBF00982D02 /* KSKFoodViewController.m */,
 				AA4DD19519AE3FED00805A53 /* Images.xcassets */,
-				AAACC7B919B3675000308840 /* sampleData.json */,
 				AA4DD18119AE3FED00805A53 /* Supporting Files */,
 			);
 			path = KioskFoodiOS;
@@ -282,7 +279,6 @@
 				AA4DD19619AE3FED00805A53 /* Images.xcassets in Resources */,
 				AA4DD18E19AE3FED00805A53 /* Main_iPhone.storyboard in Resources */,
 				AA4DD18519AE3FED00805A53 /* InfoPlist.strings in Resources */,
-				AAACC7BA19B3675000308840 /* sampleData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

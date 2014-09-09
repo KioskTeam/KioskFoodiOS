@@ -58,7 +58,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Kiosk" id="f5p-ta-mYf"/>
+                    <navigationItem key="navigationItem" title="Kiosk" id="f5p-ta-mYf">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="7Mh-Fe-5Hq">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sh7-Tx-v9K">
+                                <rect key="frame" x="233" y="5" width="71" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadData:" destination="os8-PS-igv" eventType="touchUpInside" id="eGD-z6-aTe"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="W69-Uz-QGJ" kind="push" identifier="browseCategorySegue" id="ZCm-DO-L8p"/>
                     </connections>

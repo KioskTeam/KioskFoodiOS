@@ -24,8 +24,12 @@ static  NSString *const TAG_PICTURES = @"Pictures";
 static  NSString *const REMOTE_IMAGE_POOL_DIRECTORY =@"http://secure-scrubland-8071.herokuapp.com";
 static  NSString *const REMOTE_API_URL = @"http://secure-scrubland-8071.herokuapp.com/api/latest";
 static  NSString *const ASSET_FOLDER = @"assets";
+static  NSString *const LOCAL_DATA_DIRECTORY = @"data";
+static  NSString *const LOCAL_DATA_FILE_NAME = @"data.json";
+
 NSString* DocumentDirectory;
 NSString* AssetsDirectory;
+NSString* DataDirectory;
 
 @implementation KSKKioskCommunicator
 
@@ -38,9 +42,12 @@ NSString* AssetsDirectory;
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         DocumentDirectory = [paths objectAtIndex:0];
         AssetsDirectory = [NSString stringWithFormat:@"%@/%@/", [paths objectAtIndex:0], ASSET_FOLDER];
+        DataDirectory = [NSString stringWithFormat:@"%@/%@/", [paths objectAtIndex:0], LOCAL_DATA_DIRECTORY];
+        
         
         //Directory Check
         [[NSFileManager defaultManager] createDirectoryAtPath:AssetsDirectory withIntermediateDirectories:YES  attributes:nil error:nil];
+        [[NSFileManager defaultManager] createDirectoryAtPath:DataDirectory withIntermediateDirectories:YES  attributes:nil error:nil];
         
         // getting all locally stored images
         NSError *error;
@@ -57,79 +64,89 @@ NSString* AssetsDirectory;
                 }
             }
         }
-        
     }
     
     return self;
 }
 
--(void) fetchData:(void (^)(KSKRestaurantData *))callBack {
-    
-    
-    //TODO : Check if the json file is already exists on Phone, if not download it from server and store it on the Phone!
- 
-    //Loading Local JSON file From bundle (for TESTING)
-    //NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sampleData" ofType:@"json"];
-    //NSData * fdata = [NSData dataWithContentsOfFile:filePath];
-    // return restaurant;
+-(void) fetchData:(void (^)(KSKRestaurantData *))callBack forceUpdate:(BOOL)force{
+    // Check if local Copy of file is already exists
+    NSString* localJSONFullPath =[NSString stringWithFormat:@"%@%@", DataDirectory, LOCAL_DATA_FILE_NAME];
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:localJSONFullPath];
+
+    if(fileExists && !force) {
+        
+        NSData * fdata = [NSData dataWithContentsOfFile:localJSONFullPath];
+        [self parseJsonData:fdata callBackFunc:callBack];
+        
+        
+    } else {
+        
+        NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:REMOTE_API_URL]];
+        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            
+            [self parseJsonData:data callBackFunc:callBack];
+            
+            [data writeToFile:localJSONFullPath atomically:YES];
+            
+        }];
+    }
+}
+
+-(void) parseJsonData:(NSData *)jsonFile callBackFunc:(void (^)(KSKRestaurantData *))callBack   {
     
     KSKRestaurantData* restaurant = [[KSKRestaurantData alloc] init];
     
-    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:REMOTE_API_URL]];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    NSError * parseError;
+    NSDictionary *parsedData = [NSJSONSerialization  JSONObjectWithData:jsonFile options:kNilOptions  error:&parseError];
+    
+    
+    if(parseError){
+        // Something is not right!
         
-        NSError * parseError;
-        NSDictionary *parsedData = [NSJSONSerialization  JSONObjectWithData:data options:kNilOptions  error:&parseError];
-       
+    }
+    else {
         
-        if(parseError){
-            // Something is not right!
+        restaurant.Name = parsedData[TAG_RESTAURANT_NAME];
+        restaurant.Address = parsedData[TAG_RESTAURANT_ADDRESS];
+        
+        NSArray *jsonCategories = parsedData[TAG_CATEGORIES];
+        NSMutableArray* restaurantCategoies = [[NSMutableArray alloc] init];
+        
+        for ( NSDictionary *jsonCat in jsonCategories )
+        {
             
-        }
-        else {
+            KSKCategoryData * newCategory = [[KSKCategoryData alloc] init];
+            newCategory.Name = jsonCat[TAG_NAME];
+            newCategory.ImageUrl = jsonCat[TAG_IMAGE];
             
-            restaurant.Name = parsedData[TAG_RESTAURANT_NAME];
-            restaurant.Address = parsedData[TAG_RESTAURANT_ADDRESS];
+            NSMutableArray* foodsInCategory = [[NSMutableArray alloc] init];
             
-            NSArray *jsonCategories = parsedData[TAG_CATEGORIES];
-            NSMutableArray* restaurantCategoies = [[NSMutableArray alloc] init];
-            
-            for ( NSDictionary *jsonCat in jsonCategories )
-            {
+            for(NSDictionary* jsonFood in jsonCat[TAG_FOODS]) {
                 
-                KSKCategoryData * newCategory = [[KSKCategoryData alloc] init];
-                newCategory.Name = jsonCat[TAG_NAME];
-                newCategory.ImageUrl = jsonCat[TAG_IMAGE];
+                KSKFoodData* newFood = [[KSKFoodData alloc] init];
+                newFood.name = jsonFood[TAG_NAME];
+                newFood.thumbnailImageUrl = jsonFood[TAG_THUMBNAIL];
+                //newFood.price = (NSInteger) jsonFood[TAG_PRICE];
                 
-                NSMutableArray* foodsInCategory = [[NSMutableArray alloc] init];
+                NSMutableArray* photos = [[NSMutableArray alloc] init];
                 
-                for(NSDictionary* jsonFood in jsonCat[TAG_FOODS]) {
+                for (int i =0, n = (int)[jsonFood[TAG_PICTURES] count]; i < n; i++) {
                     
-                    KSKFoodData* newFood = [[KSKFoodData alloc] init];
-                    newFood.name = jsonFood[TAG_NAME];
-                    newFood.thumbnailImageUrl = jsonFood[TAG_THUMBNAIL];
-                    //newFood.price = (NSInteger) jsonFood[TAG_PRICE];
-                    
-                    NSMutableArray* photos = [[NSMutableArray alloc] init];
-                    
-                    for (int i =0, n = (int)[jsonFood[TAG_PICTURES] count]; i < n; i++) {
-                        
-                        [photos addObject:  [jsonFood[TAG_PICTURES] objectAtIndex:i]];
-                    }
-                    
-                    [foodsInCategory addObject:newFood];
+                    [photos addObject:  [jsonFood[TAG_PICTURES] objectAtIndex:i]];
                 }
                 
-                newCategory.Foods = foodsInCategory;
-                [restaurantCategoies addObject:newCategory];
-                
+                [foodsInCategory addObject:newFood];
             }
-            restaurant.categoreis = restaurantCategoies;
+            
+            newCategory.Foods = foodsInCategory;
+            [restaurantCategoies addObject:newCategory];
+            
         }
-        
-        callBack(restaurant);
-    }];
+        restaurant.categoreis = restaurantCategoies;
+    }
     
+    callBack(restaurant);
 }
 
 

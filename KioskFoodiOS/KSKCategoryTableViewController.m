@@ -9,6 +9,7 @@
 #import "KSKCategoryTableViewController.h"
 #import "KSKFoodData.h"
 #import "KSKFoodViewController.h"
+#import "KSKCategoryCell.h"
 
 
 @interface KSKCategoryTableViewController ()
@@ -66,19 +67,31 @@
     return [_categoryData.Foods count];
 }
 
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath  {
+    return 70.0;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CatCellTableIdentifier = @"categoryCellProtoID";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CatCellTableIdentifier];
+    KSKCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:CatCellTableIdentifier];
+    
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CatCellTableIdentifier];
-        cell.backgroundColor = [UIColor orangeColor];
+        cell = [[KSKCategoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CatCellTableIdentifier];
+        cell.backgroundColor = [UIColor redColor];
     }
     
     KSKFoodData* fdata = [_categoryData.Foods objectAtIndex:indexPath.row];
-    cell.textLabel.text = fdata.name;
+    [cell txtTitle].text = fdata.name;
+    [cell imageTumbnail].backgroundColor = [UIColor grayColor];
+    [cell txtDescription].text = @"Food Description";
+    [_kCommunicator getImage:fdata.thumbnailImageUrl callBackFunc:^(UIImage *reuqestedImage) {
+        [cell imageTumbnail].image = reuqestedImage;
+    }];
+    
+    
     return cell;
 }
 
@@ -94,7 +107,8 @@
         
         KSKFoodData* selectedFoodData = [_categoryData.Foods objectAtIndex:selectedRow];
         controller.navigationItem.title = selectedFoodData.name;
-            controller.foodData = selectedFoodData;
+        controller.foodData = selectedFoodData;
+        controller.kCommunicator = _kCommunicator;
     }
 }
 @end

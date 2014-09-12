@@ -113,6 +113,7 @@ KSKKioskCommunicator* kCommunicator;
         KSKCategoryData* catData = [_data.categoreis objectAtIndex:selectedRow];
         controller.navigationItem.title = catData.Name;
         controller.categoryData = catData;
+        controller.kCommunicator = kCommunicator;
     }
     
 }

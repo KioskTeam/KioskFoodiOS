@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "KSKCategoryData.h"
+#import "KSKKioskCommunicator.h"
 
 @interface KSKCategoryTableViewController : UITableViewController
 @property (strong, nonatomic) KSKCategoryData* categoryData;
+@property (strong, nonatomic) KSKKioskCommunicator * kCommunicator;
 @end

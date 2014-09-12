@@ -26,6 +26,16 @@
     
     if(_foodData) {
         _foodNameLabel.text = _foodData.name;
+        
+        
+        NSString* imageURL = [_foodData.imageUrls objectAtIndex:0];
+        
+        if(imageURL != nil){
+            [_kCommunicator getImage:imageURL callBackFunc:^(UIImage *reuqestedImage) {
+                
+                _foodImage.image = reuqestedImage;
+            }];
+        }
     }
 }
 

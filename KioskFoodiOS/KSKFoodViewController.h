@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "KSKFoodData.h"
+#import "KSKKioskCommunicator.h"
 
 @interface KSKFoodViewController : UIViewController
 @property (strong, nonatomic) KSKFoodData* foodData;
 @property (strong, nonatomic) IBOutlet UILabel *foodNameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *foodImage;
+@property (strong, nonatomic) KSKKioskCommunicator * kCommunicator;
 @end

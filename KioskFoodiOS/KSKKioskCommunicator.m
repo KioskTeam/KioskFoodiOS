@@ -136,6 +136,8 @@ NSString* DataDirectory;
                     [photos addObject:  [jsonFood[TAG_PICTURES] objectAtIndex:i]];
                 }
                 
+                newFood.imageUrls = photos;
+                
                 [foodsInCategory addObject:newFood];
             }
             

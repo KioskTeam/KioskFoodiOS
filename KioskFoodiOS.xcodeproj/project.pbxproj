@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9ED4686BFE7B471F9CA7E0F1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C35A756DDA4D14B74E1190 /* libPods.a */; };
+		AA11040519C33DBC0003D10E /* KSKCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11040419C33DBC0003D10E /* KSKCategoryCell.m */; };
 		AA4DD17B19AE3FED00805A53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4DD17A19AE3FED00805A53 /* Foundation.framework */; };
 		AA4DD17D19AE3FED00805A53 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4DD17C19AE3FED00805A53 /* CoreGraphics.framework */; };
 		AA4DD17F19AE3FED00805A53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4DD17E19AE3FED00805A53 /* UIKit.framework */; };
@@ -44,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		91C35A756DDA4D14B74E1190 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA11040319C33DBC0003D10E /* KSKCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSKCategoryCell.h; sourceTree = "<group>"; };
+		AA11040419C33DBC0003D10E /* KSKCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSKCategoryCell.m; sourceTree = "<group>"; };
 		AA4DD17719AE3FED00805A53 /* KioskFoodiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KioskFoodiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4DD17A19AE3FED00805A53 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA4DD17C19AE3FED00805A53 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +164,8 @@
 				AAACC7BC19B3980300308840 /* KSKCategoryTableViewController.m */,
 				AAAEFEA819BACFBF00982D02 /* KSKFoodViewController.h */,
 				AAAEFEA919BACFBF00982D02 /* KSKFoodViewController.m */,
+				AA11040319C33DBC0003D10E /* KSKCategoryCell.h */,
+				AA11040419C33DBC0003D10E /* KSKCategoryCell.m */,
 				AA4DD19519AE3FED00805A53 /* Images.xcassets */,
 				AA4DD18119AE3FED00805A53 /* Supporting Files */,
 			);
@@ -335,6 +340,7 @@
 				AA4DD19419AE3FED00805A53 /* KSKViewController.m in Sources */,
 				AA4DD18719AE3FED00805A53 /* main.m in Sources */,
 				AAACC7A819B3532800308840 /* KSKFoodData.m in Sources */,
+				AA11040519C33DBC0003D10E /* KSKCategoryCell.m in Sources */,
 				AAACC7BD19B3980300308840 /* KSKCategoryTableViewController.m in Sources */,
 				AAACC7B819B3605900308840 /* KSKKioskCommunicator.m in Sources */,
 				AABB5C3E19B0F18400539BF2 /* KSKFoodMenuHome.m in Sources */,

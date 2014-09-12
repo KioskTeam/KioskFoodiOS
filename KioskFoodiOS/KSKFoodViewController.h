@@ -9,10 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "KSKFoodData.h"
 #import "KSKKioskCommunicator.h"
+#import "KSKFoodGalleryContentViewController.h"
 
-@interface KSKFoodViewController : UIViewController
+@interface KSKFoodViewController : UIViewController <UIPageViewControllerDataSource>
+
 @property (strong, nonatomic) KSKFoodData* foodData;
+
+
 @property (strong, nonatomic) IBOutlet UILabel *foodNameLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *foodImage;
 @property (strong, nonatomic) KSKKioskCommunicator * kCommunicator;
+
+@property (strong, nonatomic) IBOutlet UIView *galleryContainer;
+
+@property (strong, nonatomic) NSArray *pageImages;
+@property (strong, nonatomic) UIPageViewController *pageViewController;
 @end

@@ -166,38 +166,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7j1-te-QOZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="443"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QyY-GY-yNl">
+                                <rect key="frame" x="0.0" y="0.0" width="329" height="426"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDO-sD-3sR">
-                                <rect key="frame" x="20" y="451" width="280" height="21"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwb-kk-5tY">
+                                <rect key="frame" x="20" y="93" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.78880329979999997" green="0.54232973520000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="pDO-sD-3sR" firstAttribute="leading" secondItem="EiN-SQ-Js7" secondAttribute="leading" constant="20" symbolic="YES" id="4gN-8Y-Wyu"/>
-                            <constraint firstItem="IQo-jR-ppE" firstAttribute="top" secondItem="pDO-sD-3sR" secondAttribute="bottom" constant="96" id="F1A-j6-GhN"/>
-                            <constraint firstItem="pDO-sD-3sR" firstAttribute="centerX" secondItem="7j1-te-QOZ" secondAttribute="centerX" id="I5G-Rw-YXg"/>
-                            <constraint firstItem="7j1-te-QOZ" firstAttribute="top" secondItem="EiN-SQ-Js7" secondAttribute="top" id="KpU-Ik-FG9"/>
-                            <constraint firstItem="7j1-te-QOZ" firstAttribute="leading" secondItem="EiN-SQ-Js7" secondAttribute="leading" id="bFn-f6-0n2"/>
-                            <constraint firstItem="pDO-sD-3sR" firstAttribute="top" secondItem="7j1-te-QOZ" secondAttribute="bottom" constant="8" id="ktj-S5-acd"/>
-                            <constraint firstAttribute="trailing" secondItem="7j1-te-QOZ" secondAttribute="trailing" id="xua-So-3hG"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Food Title" id="WVy-7e-v15"/>
                     <connections>
-                        <outlet property="foodImage" destination="7j1-te-QOZ" id="s5h-cc-Jbk"/>
-                        <outlet property="foodNameLabel" destination="pDO-sD-3sR" id="H2b-YZ-Raq"/>
+                        <outlet property="foodNameLabel" destination="xwb-kk-5tY" id="XqR-cs-nna"/>
+                        <outlet property="galleryContainer" destination="QyY-GY-yNl" id="t5f-rf-PbW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZz-3o-6fK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1731" y="825"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="pAs-9U-cIP">
+            <objects>
+                <pageViewController storyboardIdentifier="FoodGalleryPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="V92-nl-OWh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E7g-iB-8Ty" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2135" y="825"/>
+        </scene>
+        <!--Food Gallery Content View Controller-->
+        <scene sceneID="Ske-rS-0QG">
+            <objects>
+                <viewController storyboardIdentifier="KSKFoodGalleryContentViewController" id="k7F-n3-1Gb" customClass="KSKFoodGalleryContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P3B-Gq-hid"/>
+                        <viewControllerLayoutGuide type="bottom" id="3yY-qq-79W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MO6-LI-XTo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5k6-2N-guf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="5k6-2N-guf" id="rbo-FT-pwr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OIb-oP-hUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2486" y="825"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zk3-jv-dzr">

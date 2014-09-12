@@ -91,7 +91,6 @@
         [cell imageTumbnail].image = reuqestedImage;
     }];
     
-    
     return cell;
 }
 

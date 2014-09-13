@@ -9,19 +9,17 @@
 #import "KSKFoodMenuHome.h"
 #import "MPSkewedCell.h"
 #import "MPSkewedParallaxLayout.h"
-
-
 #import "KSKFoodData.h"
 #import "KSKCategoryData.h"
 #import "KSKCategoryTableViewController.h"
 #import "KSKKioskCommunicator.h"
+#import "KSKPersianAnimator.h"
 
 static NSString *kCell=@"cell";
 static int  selectedRow =-1;
 KSKKioskCommunicator* kCommunicator;
 
 #define PARALLAX_ENABLED 1
-
 
 @interface KSKFoodMenuHome ()
 
@@ -111,9 +109,10 @@ KSKKioskCommunicator* kCommunicator;
     if([segue.identifier isEqualToString:@"browseCategorySegue"]) {
         KSKCategoryTableViewController *controller = (KSKCategoryTableViewController *) segue.destinationViewController;
         KSKCategoryData* catData = [_data.categoreis objectAtIndex:selectedRow];
-        controller.navigationItem.title = catData.Name;
+        
         controller.categoryData = catData;
         controller.kCommunicator = kCommunicator;
+        
     }
     
 }
@@ -136,6 +135,7 @@ KSKKioskCommunicator* kCommunicator;
     } forceUpdate:YES];
     
 }
+
 
 
 @end

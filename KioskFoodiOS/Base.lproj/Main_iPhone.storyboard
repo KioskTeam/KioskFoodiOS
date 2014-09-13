@@ -74,7 +74,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="W69-Uz-QGJ" kind="push" identifier="browseCategorySegue" id="ZCm-DO-L8p"/>
+                        <segue destination="W69-Uz-QGJ" kind="push" identifier="browseCategorySegue" customClass="KSKPersianPushStyle" id="ZCm-DO-L8p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J31-oa-xMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -90,50 +90,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="categoryCellProtoID" rowHeight="70" id="N6K-Yv-TNZ" customClass="KSKCategoryCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="categoryCellProtoID" rowHeight="70" id="N6K-Yv-TNZ" customClass="KSKCategoryCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N6K-Yv-TNZ" id="oKj-0u-M8w">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" misplaced="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dme-QT-ph4">
-                                            <rect key="frame" x="80" y="6" width="207" height="22"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" misplaced="YES" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dme-QT-ph4">
+                                            <rect key="frame" x="20" y="6" width="220" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" misplaced="YES" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="207" translatesAutoresizingMaskIntoConstraints="NO" id="Rxh-0Q-fKT">
-                                            <rect key="frame" x="80" y="36" width="207" height="29"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" verticalHuggingPriority="249" misplaced="YES" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="220" translatesAutoresizingMaskIntoConstraints="NO" id="Rxh-0Q-fKT">
+                                            <rect key="frame" x="20" y="36" width="220" height="29"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D76-EI-GVl">
-                                            <rect key="frame" x="12" y="5" width="60" height="60"/>
+                                            <rect key="frame" x="248" y="5" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="mpg-xe-1sr"/>
+                                                <constraint firstAttribute="width" constant="60" id="7qE-Jw-eF8"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Dme-QT-ph4" firstAttribute="leading" secondItem="D76-EI-GVl" secondAttribute="trailing" constant="8" id="MNQ-AW-NoP"/>
-                                        <constraint firstItem="Dme-QT-ph4" firstAttribute="top" secondItem="oKj-0u-M8w" secondAttribute="top" constant="6" id="No8-MS-8Y2"/>
-                                        <constraint firstItem="D76-EI-GVl" firstAttribute="top" secondItem="oKj-0u-M8w" secondAttribute="top" constant="5" id="Odb-2t-ZTh"/>
-                                        <constraint firstItem="D76-EI-GVl" firstAttribute="leading" secondItem="oKj-0u-M8w" secondAttribute="leading" constant="12" id="m0y-hM-9Lp"/>
-                                        <constraint firstAttribute="bottom" secondItem="Rxh-0Q-fKT" secondAttribute="bottom" constant="4" id="n4O-OA-SdQ"/>
-                                        <constraint firstItem="D76-EI-GVl" firstAttribute="bottom" secondItem="Rxh-0Q-fKT" secondAttribute="bottom" id="smy-sn-fNY"/>
-                                        <constraint firstItem="Rxh-0Q-fKT" firstAttribute="leading" secondItem="D76-EI-GVl" secondAttribute="trailing" constant="8" id="vjr-ra-jur"/>
+                                        <constraint firstItem="D76-EI-GVl" firstAttribute="leading" secondItem="Rxh-0Q-fKT" secondAttribute="trailing" constant="8" symbolic="YES" id="6sG-be-INI"/>
+                                        <constraint firstItem="D76-EI-GVl" firstAttribute="leading" secondItem="Dme-QT-ph4" secondAttribute="trailing" constant="8" symbolic="YES" id="AVR-au-uoM"/>
+                                        <constraint firstItem="D76-EI-GVl" firstAttribute="bottom" secondItem="Rxh-0Q-fKT" secondAttribute="bottom" id="DvU-FJ-91m"/>
+                                        <constraint firstItem="Dme-QT-ph4" firstAttribute="leading" secondItem="oKj-0u-M8w" secondAttribute="leading" constant="20" id="RQr-5t-6iS"/>
+                                        <constraint firstAttribute="bottom" secondItem="D76-EI-GVl" secondAttribute="bottom" constant="4" id="SoJ-6e-A7s"/>
+                                        <constraint firstItem="Rxh-0Q-fKT" firstAttribute="top" secondItem="Dme-QT-ph4" secondAttribute="bottom" constant="8" id="UEe-ob-d2G"/>
+                                        <constraint firstAttribute="trailing" secondItem="D76-EI-GVl" secondAttribute="trailing" constant="12" id="aZt-Tl-feJ"/>
+                                        <constraint firstItem="D76-EI-GVl" firstAttribute="top" secondItem="oKj-0u-M8w" secondAttribute="top" constant="5" id="eGb-FY-YGI"/>
+                                        <constraint firstItem="D76-EI-GVl" firstAttribute="leading" secondItem="Dme-QT-ph4" secondAttribute="trailing" constant="8" id="nFj-ps-2Gh"/>
+                                        <constraint firstItem="D76-EI-GVl" firstAttribute="leading" secondItem="Rxh-0Q-fKT" secondAttribute="trailing" constant="8" id="sNU-Qm-ijF"/>
+                                        <constraint firstItem="Rxh-0Q-fKT" firstAttribute="leading" secondItem="oKj-0u-M8w" secondAttribute="leading" constant="20" id="tOG-e9-POQ"/>
+                                        <constraint firstItem="Dme-QT-ph4" firstAttribute="top" secondItem="oKj-0u-M8w" secondAttribute="top" constant="6" id="uce-o5-Dcl"/>
+                                        <constraint firstAttribute="bottom" secondItem="Rxh-0Q-fKT" secondAttribute="bottom" constant="4" id="zxA-zN-JMG"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imageTumbnail" destination="D76-EI-GVl" id="gf4-rK-heu"/>
                                     <outlet property="txtDescription" destination="Rxh-0Q-fKT" id="IfI-p3-WoI"/>
                                     <outlet property="txtTitle" destination="Dme-QT-ph4" id="enA-Nd-RTO"/>
-                                    <segue destination="lkB-KS-AVX" kind="push" identifier="browseFoodSegue" id="OPz-rF-5FK"/>
+                                    <segue destination="lkB-KS-AVX" kind="push" identifier="browseFoodSegue" customClass="KSKPersianPushStyle" id="OPz-rF-5FK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -142,13 +148,7 @@
                             <outlet property="delegate" destination="W69-Uz-QGJ" id="Dqe-qA-wmF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Category Title" id="y1k-zn-Zqv">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Ip3-9F-G0a">
-                            <connections>
-                                <action selector="goBackButton:" destination="W69-Uz-QGJ" id="ioL-Hb-u0x"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Category Title" id="y1k-zn-Zqv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZa-9q-FLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

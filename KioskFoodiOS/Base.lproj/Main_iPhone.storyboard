@@ -45,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="158" y="108"/>
         </scene>
-        <!--Food Menu Home - Kiosk-->
+        <!--Food Menu Home - کیوسک-->
         <scene sceneID="3op-Go-Kji">
             <objects>
                 <viewController id="os8-PS-igv" customClass="KSKFoodMenuHome" sceneMemberID="viewController">
@@ -58,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Kiosk" id="f5p-ta-mYf">
+                    <navigationItem key="navigationItem" title="کیوسک" id="f5p-ta-mYf">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="7Mh-Fe-5Hq">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sh7-Tx-v9K">
                                 <rect key="frame" x="233" y="5" width="71" height="33"/>

@@ -44,8 +44,9 @@ KSKKioskCommunicator* kCommunicator;
     
     MPSkewedParallaxLayout *layout=[[MPSkewedParallaxLayout alloc] init];
     
-    
 #endif
+    
+
     
     _collectionView=[[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     _collectionView.delegate=self;
@@ -93,6 +94,10 @@ KSKKioskCommunicator* kCommunicator;
     [kCommunicator getImage:cellCategoryData.ImageUrl callBackFunc:^(UIImage *reuqestedImage) {
         cell.image = reuqestedImage;
     }];
+    
+    
+    cell.textLabel.font = [UIFont fontWithName:@"B Traffic" size:22.f];
+    cell.text= [NSString stringWithFormat:@"%@%@", @"این یک متن فارسی است\n", cell.text];
 
     return cell;
 }

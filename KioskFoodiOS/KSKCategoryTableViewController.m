@@ -10,9 +10,12 @@
 #import "KSKFoodData.h"
 #import "KSKFoodViewController.h"
 #import "KSKCategoryCell.h"
+#import "KSKPersianAnimator.h"
+#import "KSKImagePreview.h"
+#import "KSKDismissingAnimator.h"
 
+@interface KSKCategoryTableViewController () <UIViewControllerTransitioningDelegate>
 
-@interface KSKCategoryTableViewController ()
 @end
 
 @implementation KSKCategoryTableViewController
@@ -84,11 +87,19 @@
     
     KSKFoodData* fdata = [_categoryData.Foods objectAtIndex:indexPath.row];
     [cell txtTitle].text = fdata.name;
-    [cell imageTumbnail].backgroundColor = [UIColor grayColor];
     [cell txtDescription].text = @"Food Description";
     [_kCommunicator getImage:fdata.thumbnailImageUrl callBackFunc:^(UIImage *reuqestedImage) {
         [cell imageTumbnail].image = reuqestedImage;
     }];
+    
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showPreview:)];
+    singleTap.numberOfTapsRequired = 1;
+    [cell imageTumbnail].userInteractionEnabled = YES;
+    [[cell imageTumbnail] addGestureRecognizer:singleTap];
+
+    
+    
     
     return cell;
 }
@@ -110,6 +121,30 @@
     }
 }
 
+-(void) showPreview:(id)sender {
+    
+    KSKImagePreview *modalViewController = [KSKImagePreview new];
+    modalViewController.transitioningDelegate = self;
+    modalViewController.modalPresentationStyle = UIModalPresentationCustom;
+    
+    
+    UIImageView *theImageView = (UIImageView *)[sender view];
+    modalViewController.theImage = theImageView.image;
+    
+    [self.navigationController presentViewController:modalViewController animated:YES completion:NULL];
+    
+}
 
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source
+{
+    return [KSKPersianAnimator new];
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    return [KSKDismissingAnimator new];
+}
 
 @end

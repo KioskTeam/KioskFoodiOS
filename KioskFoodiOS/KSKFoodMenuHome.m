@@ -71,11 +71,14 @@ KSKKioskCommunicator* kCommunicator;
         [_collectionView reloadData];
     } forceUpdate:NO];
     
+    
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys: [UIFont fontWithName:@"B Traffic" size:18], NSFontAttributeName, nil]];
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
     return  _numberOfCells;
 }
 
@@ -97,7 +100,8 @@ KSKKioskCommunicator* kCommunicator;
     
     
     cell.textLabel.font = [UIFont fontWithName:@"B Traffic" size:22.f];
-    cell.text= [NSString stringWithFormat:@"%@%@", @"این یک متن فارسی است\n", cell.text];
+    cell.text= [NSString stringWithFormat:@"%@%@", @"  ", cell.text];
+    cell.textLabel.textAlignment = NSTextAlignmentRight;
 
     return cell;
 }

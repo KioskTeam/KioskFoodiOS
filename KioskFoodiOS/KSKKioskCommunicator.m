@@ -15,13 +15,14 @@
 static  NSString *const TAG_RESTAURANT_NAME = @"Name";
 static  NSString *const TAG_RESTAURANT_ADDRESS = @"Address";
 static  NSString *const TAG_CATEGORIES = @"Categories";
-static  NSString *const TAG_NAME = @"Name";
+static  NSString *const TAG_NAME = @"Name_fa";
 static  NSString *const TAG_IMAGE = @"Image";
 static  NSString *const TAG_FOODS = @"Foods";
 static  NSString *const TAG_PRICE = @"Price";
+static  NSString *const TAG_DESCRIPTION = @"Description_fa";
 static  NSString *const TAG_THUMBNAIL = @"Thumbnail";
 static  NSString *const TAG_PICTURES = @"Pictures";
-static  NSString *const REMOTE_IMAGE_POOL_DIRECTORY =@"http://secure-scrubland-8071.herokuapp.com";
+static  NSString *const REMOTE_IMAGE_POOL_DIRECTORY =@"http://178.62.23.195/";
 static  NSString *const REMOTE_API_URL = @"http://178.62.23.195/api/restaurant/1";
 static  NSString *const ASSET_FOLDER = @"assets";
 static  NSString *const LOCAL_DATA_DIRECTORY = @"data";
@@ -127,8 +128,8 @@ NSString* DataDirectory;
                 KSKFoodData* newFood = [[KSKFoodData alloc] init];
                 newFood.name = jsonFood[TAG_NAME];
                 newFood.thumbnailImageUrl = jsonFood[TAG_THUMBNAIL];
-                //newFood.price = (NSInteger) jsonFood[TAG_PRICE];
-                
+                newFood.food_description = jsonFood[TAG_DESCRIPTION];
+
                 NSMutableArray* photos = [[NSMutableArray alloc] init];
                 
                 for (int i =0, n = (int)[jsonFood[TAG_PICTURES] count]; i < n; i++) {

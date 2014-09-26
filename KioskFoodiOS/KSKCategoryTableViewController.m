@@ -13,6 +13,7 @@
 #import "KSKPersianAnimator.h"
 #import "KSKImagePreview.h"
 #import "KSKDismissingAnimator.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface KSKCategoryTableViewController () <UIViewControllerTransitioningDelegate>
 
@@ -33,13 +34,26 @@
 {
     [super viewDidLoad];
     
+    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"pw_maze_white"]];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    
+    
+    if(_categoryData != nil){
+        self.navigationItem.title = _categoryData.Name;
+        
+    } else {
+        
+        self.navigationItem.title = @" ";
+    }
 }
+
+
 
 - (IBAction)closeButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -86,8 +100,11 @@
     }
     
     KSKFoodData* fdata = [_categoryData.Foods objectAtIndex:indexPath.row];
+    
+    [cell txtTitle].font = [UIFont fontWithName:@"B Traffic" size:22.f];
     [cell txtTitle].text = fdata.name;
-    [cell txtDescription].text = @"Food Description";
+    [cell txtDescription].text = fdata.food_description;
+    [cell txtDescription].font = [UIFont fontWithName:@"B Traffic" size:16.f];
     [_kCommunicator getImage:fdata.thumbnailImageUrl callBackFunc:^(UIImage *reuqestedImage) {
         [cell imageTumbnail].image = reuqestedImage;
     }];

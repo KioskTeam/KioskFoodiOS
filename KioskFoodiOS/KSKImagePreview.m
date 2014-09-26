@@ -26,7 +26,7 @@
 -(void) addImageView {
     
     UIImageView *imagePreview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 220, 280)];
-    imagePreview.backgroundColor = [UIColor redColor];
+    imagePreview.backgroundColor = [UIColor grayColor];
     
     imagePreview.contentMode = UIViewContentModeScaleAspectFill;
     imagePreview.image = self.theImage;

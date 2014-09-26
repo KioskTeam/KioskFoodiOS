@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="c00-oC-Gx4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="c00-oC-Gx4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="BTraffic.ttf">
+            <string>BTraffic</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--Food Menu Home - کیوسک-->
+        <!--کیوسک-->
         <scene sceneID="3op-Go-Kji">
             <objects>
                 <viewController id="os8-PS-igv" customClass="KSKFoodMenuHome" sceneMemberID="viewController">
@@ -33,14 +38,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="W69-Uz-QGJ" kind="push" identifier="browseCategorySegue" customClass="KSKPersianPushStyle" id="ZCm-DO-L8p"/>
+                        <segue destination="W69-Uz-QGJ" kind="push" identifier="browseCategorySegue" id="ZCm-DO-L8p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J31-oa-xMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="684" y="825"/>
         </scene>
-        <!--Category Table View Controller - Category Title-->
+        <!--Category Title-->
         <scene sceneID="VRk-qe-vJg">
             <objects>
                 <tableViewController id="W69-Uz-QGJ" customClass="KSKCategoryTableViewController" sceneMemberID="viewController">
@@ -58,21 +63,18 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dme-QT-ph4">
                                             <rect key="frame" x="20" y="6" width="220" height="28"/>
-                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" verticalHuggingPriority="249" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="220" translatesAutoresizingMaskIntoConstraints="NO" id="Rxh-0Q-fKT">
                                             <rect key="frame" x="20" y="42" width="220" height="23"/>
-                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D76-EI-GVl">
                                             <rect key="frame" x="248" y="5" width="60" height="60"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="7qE-Jw-eF8"/>
                                             </constraints>
@@ -98,7 +100,7 @@
                                     <outlet property="imageTumbnail" destination="D76-EI-GVl" id="gf4-rK-heu"/>
                                     <outlet property="txtDescription" destination="Rxh-0Q-fKT" id="IfI-p3-WoI"/>
                                     <outlet property="txtTitle" destination="Dme-QT-ph4" id="enA-Nd-RTO"/>
-                                    <segue destination="lkB-KS-AVX" kind="push" identifier="browseFoodSegue" customClass="KSKPersianPushStyle" id="OPz-rF-5FK"/>
+                                    <segue destination="lkB-KS-AVX" kind="push" identifier="browseFoodSegue" id="OPz-rF-5FK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -113,7 +115,7 @@
             </objects>
             <point key="canvasLocation" x="1187" y="825"/>
         </scene>
-        <!--Food View Controller - Food Title-->
+        <!--Food Title-->
         <scene sceneID="lbb-uO-735">
             <objects>
                 <viewController id="lkB-KS-AVX" customClass="KSKFoodViewController" sceneMemberID="viewController">
@@ -127,13 +129,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QyY-GY-yNl">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwb-kk-5tY">
-                                <rect key="frame" x="20" y="93" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.78880329979999997" green="0.54232973520000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME" textAlignment="center" lineBreakMode="middleTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwb-kk-5tY">
+                                <rect key="frame" x="20" y="93" width="280" height="36"/>
+                                <fontDescription key="fontDescription" name="BTraffic" family="B Traffic" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -170,7 +171,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5k6-2N-guf">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -205,6 +205,9 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
 </document>

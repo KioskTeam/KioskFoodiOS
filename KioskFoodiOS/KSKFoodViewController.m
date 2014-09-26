@@ -25,8 +25,6 @@
     [super viewDidLoad];
     
     if(_foodData) {
-        //        _foodNameLabel.text = _foodData.name;
-        //
        
         self.pageImages = _foodData.imageUrls;
         self.foodNameLabel.text = _foodData.name;

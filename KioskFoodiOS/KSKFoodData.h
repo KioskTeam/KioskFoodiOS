@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (assign, nonatomic) NSInteger price;
+@property (strong, nonatomic) NSString *food_description;
 @property  (strong, nonatomic) NSMutableArray *imageUrls;
 @property (strong, nonatomic) NSString *thumbnailImageUrl;
 
